@@ -27,6 +27,9 @@
  * documented.
  */
 
+// composer autoloader for all namespaced Classes
+require_once('vendor/autoload.php');
+
 require_once('include/config.php');
 require_once('include/network.php');
 require_once('include/plugin.php');
@@ -75,7 +78,7 @@ define ( 'DIRECTORY_MODE_STANDALONE',  0x0100); // A detached (off the grid) hub
 define ( 'DIRECTORY_REALM',            'RED_GLOBAL');
 define ( 'DIRECTORY_FALLBACK_MASTER',  'https://hub.pixelbits.de');
 
-$DIRECTORY_FALLBACK_SERVERS = array( 
+$DIRECTORY_FALLBACK_SERVERS = array(
 	'https://hubzilla.site',
 	'https://hubzilla.zottel.net',
 	'https://hub.pixelbits.de',
@@ -223,7 +226,7 @@ define ( 'PAGE_PREMIUM',           0x0010 );
 define ( 'PAGE_ADULT',             0x0020 );
 define ( 'PAGE_CENSORED',          0x0040 ); // Site admin has blocked this channel from appearing in casual search results and site feeds
 define ( 'PAGE_SYSTEM',            0x1000 );
-define ( 'PAGE_HUBADMIN',          0x2000 ); // set this to indicate a preferred admin channel rather than the 
+define ( 'PAGE_HUBADMIN',          0x2000 ); // set this to indicate a preferred admin channel rather than the
 											 // default channel of any accounts with the admin role.
 define ( 'PAGE_REMOVED',           0x8000 );
 
@@ -695,41 +698,13 @@ function startup() {
 }
 
 
-class ZotlabsAutoloader {
-    static public function loader($className) {
-		$debug = false;
-        $filename = str_replace('\\', '/', $className) . ".php";
-        if(file_exists($filename)) {
-            include($filename);
-            if (class_exists($className)) {
-                return TRUE;
-            }
-        }
-		$arr = explode('\\',$className);
-		if($arr && count($arr) > 1) {
-			if(! $arr[0])
-				$arr = array_shift($arr);
-	        $filename = 'addon/' . lcfirst($arr[0]) . '/' . $arr[1] . ((count($arr) === 2) ? '.php' : '/' . $arr[2] . ".php");
-    	    if(file_exists($filename)) {
-        	    include($filename);
-            	if (class_exists($className)) {
-                	return TRUE;
-	            }
-    	    }
-		}
-
-        return FALSE;
-    }
-}
-
-
 /**
  * class miniApp
  *
  * this is a transient structure which is needed to convert the $a->config settings
  * from older (existing) htconfig files which used a global App ($a) into the updated App structure
- * which is now static (although currently constructed at startup). We are only converting 
- * 'system' config settings. 
+ * which is now static (although currently constructed at startup). We are only converting
+ * 'system' config settings.
  */
 
 
@@ -738,8 +713,8 @@ class miniApp {
 
 	public function convert() {
 		if($this->config['system']) {
-		    foreach($this->config['system'] as $k => $v)
-		        App::$config['system'][$k] = $v;
+			foreach($this->config['system'] as $k => $v)
+				App::$config['system'][$k] = $v;
 		}
 	}
 }
@@ -982,24 +957,11 @@ class App {
 		 * register template engines
 		 */
 
-		spl_autoload_register('ZotlabsAutoloader::loader');
-
 		self::$meta= new Zotlabs\Web\HttpMeta();
 
 		// create an instance of the smarty template engine so we can register it.
-
 		$smarty = new Zotlabs\Render\SmartyTemplate();
-
-		$dc = get_declared_classes();
-
-		foreach ($dc as $k) {
-			if(in_array('Zotlabs\\Render\\TemplateEngine', class_implements($k))) {
-				self::register_template_engine($k);
-			}
-		}
-
-
-
+		self::register_template_engine(get_class($smarty));
 	}
 
 	public static function get_baseurl($ssl = false) {
@@ -1192,7 +1154,7 @@ class App {
 			'$local_channel' => local_channel(),
 			'$metas' => self::$meta->get(),
 			'$update_interval' => $interval,
-			'osearch' => sprintf( t('Search %1$s (%2$s)','opensearch'), Zotlabs\Lib\System::get_site_name(), t('$Projectname','opensearch')), 
+			'osearch' => sprintf( t('Search %1$s (%2$s)','opensearch'), Zotlabs\Lib\System::get_site_name(), t('$Projectname','opensearch')),
 			'$icon' => head_get_icon(),
 			'$head_css' => head_get_css(),
 			'$head_js' => head_get_js(),
@@ -1390,7 +1352,7 @@ function os_mkdir($path, $mode = 0777, $recursive = false) {
 	$oldumask = @umask(0);
 	$result = @mkdir($path, $mode, $recursive);
 	@umask($oldumask);
-	return $result; 
+	return $result;
 }
 
 /**
@@ -1489,7 +1451,7 @@ function check_config(&$a) {
 						if($retval) {
 
 							// Prevent sending hundreds of thousands of emails by creating
-							// a lockfile.  
+							// a lockfile.
 
 							$lockfile = 'store/[data]/mailsent';
 
@@ -1498,7 +1460,7 @@ function check_config(&$a) {
 							@unlink($lockfile);
 							//send the administrator an e-mail
 							file_put_contents($lockfile, $x);
-							
+
 							$r = q("select account_language from account where account_email = '%s' limit 1",
 								dbesc(App::$config['system']['admin_email'])
 							);
@@ -1760,7 +1722,7 @@ function killme() {
 
 	// Ensure that closing the database is the last function on the shutdown stack.
 	// If it is closed prematurely sessions might not get saved correctly.
-	// Note the second arg to PHP's session_set_save_handler() seems to order that shutdown 
+	// Note the second arg to PHP's session_set_save_handler() seems to order that shutdown
 	// procedure last despite our best efforts, so we don't use that and implictly
 	// call register_shutdown_function('session_write_close'); within Zotlabs\Web\Session::init()
 	// and then register the database close function here where nothing else can register
@@ -1813,8 +1775,8 @@ function get_account_id() {
  * @return int|bool channel_id or false
  */
 function local_channel() {
-	if(session_id() 
-		&& array_key_exists('authenticated',$_SESSION) && $_SESSION['authenticated'] 
+	if(session_id()
+		&& array_key_exists('authenticated',$_SESSION) && $_SESSION['authenticated']
 		&& array_key_exists('uid',$_SESSION) && intval($_SESSION['uid']))
 		return intval($_SESSION['uid']);
 
@@ -1846,8 +1808,8 @@ function local_user() {
  * @return string|bool visitor_id or false
  */
 function remote_channel() {
-	if(session_id() 
-		&& array_key_exists('authenticated',$_SESSION) && $_SESSION['authenticated'] 
+	if(session_id()
+		&& array_key_exists('authenticated',$_SESSION) && $_SESSION['authenticated']
 		&& array_key_exists('visitor_id',$_SESSION) && $_SESSION['visitor_id'])
 		return $_SESSION['visitor_id'];
 
@@ -1878,8 +1840,8 @@ function notice($s) {
 
 	if(! x($_SESSION, 'sysmsg')) $_SESSION['sysmsg'] = array();
 
-	// ignore duplicated error messages which haven't yet been displayed 
-	// - typically seen as multiple 'permission denied' messages 
+	// ignore duplicated error messages which haven't yet been displayed
+	// - typically seen as multiple 'permission denied' messages
 	// as a result of auto-reloading a protected page with &JS=1
 
 	if(in_array($s,$_SESSION['sysmsg']))
@@ -1901,7 +1863,7 @@ function notice($s) {
 function info($s) {
 	if(! session_id())
 		return;
-	if(! x($_SESSION, 'sysmsg_info')) 
+	if(! x($_SESSION, 'sysmsg_info'))
 		$_SESSION['sysmsg_info'] = array();
 	if(App::$interactive)
 		$_SESSION['sysmsg_info'][] = $s;
@@ -1977,7 +1939,7 @@ function proc_run(){
 		proc_close(proc_open($cmd, array(), $foo));
 	}
 	else {
-		if(get_config('system','use_proc_open')) 
+		if(get_config('system','use_proc_open'))
 			proc_close(proc_open($cmdline ." &", array(), $foo));
 		else
 			exec($cmdline . ' > /dev/null &');
@@ -1990,8 +1952,8 @@ function proc_run(){
  * @return bool true if we run on M$ Windows
  *
  * It's possible you might be able to run on WAMP or XAMPP, and this
- * has been accomplished, but is not officially supported. Good luck. 
- * 
+ * has been accomplished, but is not officially supported. Good luck.
+ *
  */
 function is_windows() {
 	return ((strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') ? true : false);
@@ -2339,7 +2301,7 @@ function construct_page(&$a) {
 	if(App::$config['system']['x_security_headers']) {
 		header("X-Frame-Options: SAMEORIGIN");
 		header("X-Xss-Protection: 1; mode=block;");
-		header("X-Content-Type-Options: nosniff");	
+		header("X-Content-Type-Options: nosniff");
 	}
 
 	if(App::$config['system']['public_key_pins']) {
@@ -2452,7 +2414,7 @@ function z_check_cert() {
 				cert_bad_email();
 		}
 	}
-} 
+}
 
 
 /**
@@ -2538,14 +2500,13 @@ function check_for_new_perms() {
 }
 
 
-
 /**
  * @brief Send warnings every 3-5 days if cron is not running.
  */
 function check_cron_broken() {
 
 	$d = get_config('system','lastcron');
-	
+
 	if((! $d) || ($d < datetime_convert('UTC','UTC','now - 4 hours'))) {
 		Zotlabs\Daemon\Master::Summon(array('Cron'));
 		set_config('system','lastcron',datetime_convert());
@@ -2583,16 +2544,15 @@ function check_cron_broken() {
 		'From: Administrator' . '@' . App::get_hostname() . "\n"
 		. 'Content-type: text/plain; charset=UTF-8' . "\n"
 		. 'Content-transfer-encoding: 8bit' );
+
 	return;
 }
 
 
-
 function observer_prohibited($allow_account = false) {
-
-	if($allow_account) 
+	if($allow_account)
 		return (((get_config('system','block_public')) && (! get_account_id()) && (! remote_channel())) ? true : false );
-	return (((get_config('system','block_public')) && (! local_channel()) && (! remote_channel())) ? true : false );
 
+	return (((get_config('system','block_public')) && (! local_channel()) && (! remote_channel())) ? true : false );
 }
 
