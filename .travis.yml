@@ -150,30 +150,30 @@ before_deploy:
 deploy:
   - provider: pages
     skip_cleanup: true
-    local_dir: $TRAVIS_BUILD_DIR/doc/html
-    github_token: $GH_TOKEN
+    local_dir: doc/html
+    github_token: $GHP_TOKEN
     on:
-      repo: redmatrix/hubzilla
+      repo: dawnbreak/hubzilla
       branch: master
-      condition: '(-n "$GH_TOKEN") && ("$TRAVIS_JOB_NUMBER" == "${TRAVIS_BUILD_NUMBER}.1")'
+      condition: '(-n "$GHP_TOKEN") && ("$TRAVIS_JOB_NUMBER" == "${TRAVIS_BUILD_NUMBER}.1")'
   # add API documentation to release, could also be used to provide full packages if we want to drop vendor from our repo
   - provider: releases
     skip_cleanup: true
-    api_key: $GH_TOKEN
+    api_key: $GHP_TOKEN
     file: 'doc/hubzilla-api-documentation.zip'
     on:
-      repo: redmatrix/hubzilla
+      repo: dawnbreak/hubzilla
       tags: true
-      condition: '(-n "$GH_TOKEN") && ("$TRAVIS_JOB_NUMBER" == "${TRAVIS_BUILD_NUMBER}.1")'
+      condition: '(-n "$GHP_TOKEN") && ("$TRAVIS_JOB_NUMBER" == "${TRAVIS_BUILD_NUMBER}.1")'
   # add code coverage and test results to release
   - provider: releases
     skip_cleanup: true
-    api_key: $GH_TOKEN
+    api_key: $GHP_TOKEN
     file: 'tests/hubzilla-testresults.zip'
     on:
-      repo: redmatrix/hubzilla
+      repo: dawnbreak/hubzilla
       tags: true
-      condition: '(-n "$GH_TOKEN") && ("$CODECOV" == "1")'
+      condition: '(-n "$GHP_TOKEN") && ("$CODECOV" == "1")'
 #after_deploy:
 
 #after_script:
