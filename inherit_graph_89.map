@@ -1,0 +1,6 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node2" href="$classZotlabs_1_1Storage_1_1BasicAuth.html" title="Authentication backend class for DAV. " alt="" coords="157,56,336,83"/>
+<area shape="rect" id="node4" href="$classZotlabs_1_1Storage_1_1Directory.html" title="RedDirectory class. " alt="" coords="161,157,332,184"/>
+<area shape="rect" id="node6" href="$classZotlabs_1_1Storage_1_1File.html" title="This class represents a file in DAV. " alt="" coords="177,259,316,285"/>
+<area shape="rect" id="node11" href="$classZotlabs_1_1Storage_1_1Browser.html" title="Provides a DAV frontend for the webbrowser. " alt="" coords="163,335,330,361"/>
+</map>

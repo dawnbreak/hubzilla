@@ -1,0 +1,93 @@
+/home/travis/build/dawnbreak/hubzilla/Zotlabs/Daemon/README.md:1: warning: found more than one \mainpage comment block! Skipping this block.
+/home/travis/build/dawnbreak/hubzilla/Zotlabs/Module/README.md:1: warning: found more than one \mainpage comment block! Skipping this block.
+/home/travis/build/dawnbreak/hubzilla/include/attach.php:177: warning: The following parameters of attach_list_files($channel_id,$observer,$hash='',$filename='',$filetype='',$orderby='created desc',$start=0,$entries=0,$since='',$until='') are not documented:
+  parameter '$since'
+  parameter '$until'
+/home/travis/build/dawnbreak/hubzilla/include/config.php:27: warning: unable to resolve reference to `util/pconfig.md' for \ref command
+todo:42: warning: Illegal command Module as part of a \ref
+todo:42: warning: Illegal command Admin as part of a \ref
+todo:42: warning: Illegal command Plugins as part of a \ref
+todo:43: warning: Illegal command Module as part of a \ref
+todo:43: warning: Illegal command Admin as part of a \ref
+todo:43: warning: Illegal command Plugins as part of a \ref
+todo:44: warning: Illegal command Module as part of a \ref
+todo:44: warning: Illegal command Setup as part of a \ref
+todo:46: warning: Illegal command Storage as part of a \ref
+todo:46: warning: Illegal command Browser as part of a \ref
+todo:48: warning: Illegal command Storage as part of a \ref
+todo:48: warning: Illegal command Browser as part of a \ref
+todo:51: warning: Illegal command Storage as part of a \ref
+todo:51: warning: Illegal command Directory as part of a \ref
+todo:54: warning: Illegal command Storage as part of a \ref
+todo:54: warning: Illegal command Directory as part of a \ref
+todo:55: warning: Illegal command Storage as part of a \ref
+todo:55: warning: Illegal command Directory as part of a \ref
+fixme:40: warning: Illegal command Daemon as part of a \ref
+fixme:40: warning: Illegal command Directory as part of a \ref
+fixme:43: warning: Illegal command Daemon as part of a \ref
+fixme:43: warning: Illegal command Expire as part of a \ref
+fixme:44: warning: Illegal command Lib as part of a \ref
+fixme:44: warning: Illegal command ActivityStreams as part of a \ref
+fixme:45: warning: Illegal command Module as part of a \ref
+fixme:45: warning: Illegal command Admin as part of a \ref
+fixme:45: warning: Illegal command Themes as part of a \ref
+fixme:46: warning: Illegal command Module as part of a \ref
+fixme:46: warning: Illegal command Cover_photo as part of a \ref
+fixme:47: warning: Illegal command Module as part of a \ref
+fixme:47: warning: Illegal command Import as part of a \ref
+fixme:48: warning: Illegal command Module as part of a \ref
+fixme:48: warning: Illegal command Ping as part of a \ref
+fixme:49: warning: Illegal command Module as part of a \ref
+fixme:49: warning: Illegal command Regdir as part of a \ref
+fixme:54: warning: Illegal command Module as part of a \ref
+fixme:54: warning: Illegal command Share as part of a \ref
+fixme:58: warning: Illegal command Module as part of a \ref
+fixme:58: warning: Illegal command Thing as part of a \ref
+fixme:61: warning: Illegal command Storage as part of a \ref
+fixme:61: warning: Illegal command Browser as part of a \ref
+fixme:63: warning: Illegal command Storage as part of a \ref
+fixme:63: warning: Illegal command Directory as part of a \ref
+fixme:65: warning: Illegal command Widget as part of a \ref
+fixme:65: warning: Illegal command Forums as part of a \ref
+fixme:72: warning: Illegal command Zot as part of a \ref
+fixme:72: warning: Illegal command Auth as part of a \ref
+hooks:323: warning: Illegal command Access as part of a \ref
+hooks:323: warning: Illegal command PermissionRoles as part of a \ref
+hooks:326: warning: Illegal command Access as part of a \ref
+hooks:326: warning: Illegal command Permissions as part of a \ref
+hooks:329: warning: Illegal command Access as part of a \ref
+hooks:329: warning: Illegal command Permissions as part of a \ref
+hooks:333: warning: Illegal command Daemon as part of a \ref
+hooks:333: warning: Illegal command Thumbnail as part of a \ref
+hooks:340: warning: Illegal command Lib as part of a \ref
+hooks:340: warning: Illegal command Chatroom as part of a \ref
+hooks:346: warning: Illegal command Web as part of a \ref
+hooks:346: warning: Illegal command Router as part of a \ref
+/home/travis/build/dawnbreak/hubzilla/include/dba/dba_driver.php:109: warning: The following parameters of dba_driver\connect($server,$scheme,$port,$user,$pass,$db) are not documented:
+  parameter '$scheme'
+/home/travis/build/dawnbreak/hubzilla/Zotlabs/Module/Fbrowser.php:4: warning: Found unknown command `\modules'
+/home/travis/build/dawnbreak/hubzilla/Zotlabs/Module/Fbrowser.php:5: warning: Found unknown command `\subpackage'
+/home/travis/build/dawnbreak/hubzilla/Zotlabs/Lib/MarkdownSoap.php:18: warning: Found unknown command `\Zotlabs'
+/home/travis/build/dawnbreak/hubzilla/Zotlabs/Lib/MarkdownSoap.php:18: warning: Found unknown command `\Lib'
+/home/travis/build/dawnbreak/hubzilla/Zotlabs/Lib/MarkdownSoap.php:18: warning: Found unknown command `\MarkdownSoap'
+/home/travis/build/dawnbreak/hubzilla/Zotlabs/Lib/MarkdownSoap.php:18: warning: explicit link request to 'unescape' could not be resolved
+/home/travis/build/dawnbreak/hubzilla/Zotlabs/Lib/MarkdownSoap.php:19: warning: Found unknown command `\Michelf'
+/home/travis/build/dawnbreak/hubzilla/Zotlabs/Lib/MarkdownSoap.php:19: warning: Found unknown command `\MarkdownExtra'
+/home/travis/build/dawnbreak/hubzilla/Zotlabs/Lib/MarkdownSoap.php:19: warning: explicit link request to 'DefaultTransform' could not be resolved
+/home/travis/build/dawnbreak/hubzilla/Zotlabs/Module/Embedphotos.php:61: warning: explicit link request to 'widget_album()' could not be resolved
+/home/travis/build/dawnbreak/hubzilla/Zotlabs/Storage/BasicAuth.php:15: warning: unable to resolve link to `http://github.com/friendica/red' for \link command
+/home/travis/build/dawnbreak/hubzilla/Zotlabs/Storage/BasicAuth.php:16: warning: Illegal command par as part of a \link
+/home/travis/build/dawnbreak/hubzilla/Zotlabs/Storage/BasicAuth.php:18: warning: Unexpected end of comment while inside link command
+
+/home/travis/build/dawnbreak/hubzilla/Zotlabs/Storage/Browser.php:13: warning: unable to resolve link to `http://github.com/redmatrix/hubzilla' for \link command
+/home/travis/build/dawnbreak/hubzilla/Zotlabs/Storage/Browser.php:14: warning: Illegal command par as part of a \link
+/home/travis/build/dawnbreak/hubzilla/Zotlabs/Storage/Browser.php:16: warning: Unexpected end of comment while inside link command
+
+/home/travis/build/dawnbreak/hubzilla/Zotlabs/Storage/Directory.php:14: warning: unable to resolve link to `http://github.com/friendica/red' for \link command
+/home/travis/build/dawnbreak/hubzilla/Zotlabs/Storage/Directory.php:15: warning: Illegal command par as part of a \link
+/home/travis/build/dawnbreak/hubzilla/Zotlabs/Storage/Directory.php:17: warning: Unexpected end of comment while inside link command
+
+/home/travis/build/dawnbreak/hubzilla/Zotlabs/Storage/File.php:13: warning: unable to resolve link to `http://github.com/friendica/red' for \link command
+/home/travis/build/dawnbreak/hubzilla/Zotlabs/Storage/File.php:14: warning: Illegal command par as part of a \link
+/home/travis/build/dawnbreak/hubzilla/Zotlabs/Storage/File.php:16: warning: Unexpected end of comment while inside link command
+

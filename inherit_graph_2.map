@@ -1,0 +1,7 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classdba__driver.html" title="abstract database driver class. " alt="" coords="5,81,88,108"/>
+<area shape="rect" id="node2" href="$classdba__mysql.html" title="dba_mysql" alt="" coords="144,5,229,32"/>
+<area shape="rect" id="node3" href="$classdba__mysqli.html" title="dba_mysqli" alt="" coords="143,56,231,83"/>
+<area shape="rect" id="node4" href="$classdba__pdo.html" title="dba_pdo" alt="" coords="151,107,222,133"/>
+<area shape="rect" id="node5" href="$classdba__postgres.html" title="dba_postgres" alt="" coords="137,157,237,184"/>
+</map>

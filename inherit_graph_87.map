@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$interfaceZotlabs_1_1Render_1_1TemplateEngine.html" title="Interface for template engines. " alt="" coords="6,31,215,57"/>
+<area shape="rect" id="node2" href="$classZotlabs_1_1Render_1_1SimpleTemplate.html" title="Zotlabs\\Render\\SimpleTemplate" alt="" coords="265,5,474,32"/>
+<area shape="rect" id="node3" href="$classZotlabs_1_1Render_1_1SmartyTemplate.html" title="Zotlabs\\Render\\SmartyTemplate" alt="" coords="264,56,475,83"/>
+</map>

@@ -1,0 +1,26 @@
+var taxonomy_8php =
+[
+    [ "app_tagadelic", "taxonomy_8php.html#a130365702ed926518497c8471577483a", null ],
+    [ "app_tagblock", "taxonomy_8php.html#a713b59b86e2cc22259faf45a6e7570ef", null ],
+    [ "article_catblock", "taxonomy_8php.html#a92032b16711653778b15cfd84c3f3486", null ],
+    [ "article_tagadelic", "taxonomy_8php.html#ae6828204adb40b827b319fe48e3791fe", null ],
+    [ "card_catblock", "taxonomy_8php.html#ae7fbd406340a82159922d3c72ee3513c", null ],
+    [ "card_tagadelic", "taxonomy_8php.html#a3af7719fab455fded05bc36559ff58b0", null ],
+    [ "catblock", "taxonomy_8php.html#afeded9878363bd98c6c29bc67a8ae7fe", null ],
+    [ "dir_tagadelic", "taxonomy_8php.html#a088371f4bc19155b2291508f5cd63332", null ],
+    [ "dir_tagblock", "taxonomy_8php.html#a599ee71dd3194c8127b00dabec77abc1", null ],
+    [ "file_tag_decode", "taxonomy_8php.html#a08df5164926d2b31b8e9fcfe919de2b6", null ],
+    [ "file_tag_encode", "taxonomy_8php.html#a3299482ac20e9d79453048dd52881d37", null ],
+    [ "file_tag_file_query", "taxonomy_8php.html#a163b5131f388080b0fc82398d3a32fe1", null ],
+    [ "format_term_for_display", "taxonomy_8php.html#adfead45e3b8a3dfb2b4a4b9281d0dbe1", null ],
+    [ "get_terms_oftype", "taxonomy_8php.html#a0fb8cf0ac7bcbc8b27d856fe9bf69cd1", null ],
+    [ "get_things", "taxonomy_8php.html#a7747fa859ac56fbffd4f9782d85505de", null ],
+    [ "obj_verb_selector", "taxonomy_8php.html#af387463d42ffdf7d2ab3d5b22e40a0c7", null ],
+    [ "obj_verbs", "taxonomy_8php.html#a03f55ee46c5f496e42f3d29db8d09cce", null ],
+    [ "store_item_tag", "taxonomy_8php.html#a4ba1339b2a7054971178ce194e4440fd", null ],
+    [ "tagadelic", "taxonomy_8php.html#a0b9ea98b3bdce013672de44b4c295760", null ],
+    [ "tagblock", "taxonomy_8php.html#ab5dbe2491c32b06670c25b86f8a92e17", null ],
+    [ "term_item_parent_query", "taxonomy_8php.html#aefd948e488c4afd01d6eb373c44bfa1f", null ],
+    [ "term_query", "taxonomy_8php.html#aeac653ad368e49de7ee3a24b5fee953e", null ],
+    [ "wtagblock", "taxonomy_8php.html#a2d8208bd664f14a5c62e1ce280a73ead", null ]
+];
